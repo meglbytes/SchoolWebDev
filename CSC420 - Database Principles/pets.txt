@@ -1,0 +1,4 @@
+Fluffy	Harold	cat	f	1993-02-04
+Claws	Gwen	cat	m	1994-03-17
+Buffy	Harold	dog	f	1989-05-13
+Fang	Benny	dog	m	1990-08-27

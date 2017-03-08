@@ -1,0 +1,20 @@
+USE csc420_meglama
+
+INSERT INTO Flights VALUES(NULL,'JFK','2013-03-15','2013-03-16');
+SELECT * 
+FROM Flights
+WHERE Destination = 'JFK'
+AND DepartureDate = '2013-03-15'
+AND ReturnDate = '2013-03-16';
+
+INSERT INTO Cars VALUES(NULL,'2013-03-15','2013-03-16');
+SELECT * 
+FROM Cars
+WHERE RentalStartDate = '2013-03-15'
+AND RentalEndDate = '2013-03-16';
+
+INSERT INTO Hotels VALUES (NULL,'2013-03-15','2013-03-16');
+SELECT * 
+FROM Hotels
+WHERE ArrivalDate = '2013-03-15'
+AND DepartureDate = '2013-03-16';

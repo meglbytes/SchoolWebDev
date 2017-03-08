@@ -1,0 +1,4 @@
+USE csc420_meglama
+
+SELECT Destination, DepartureDate, ReturnDate
+FROM Flights;

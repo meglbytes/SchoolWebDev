@@ -1,0 +1,74 @@
+USE csc420_meglama
+
+CREATE TABLE Cars 
+(
+CarID int NOT NULL AUTO_INCREMENT, 
+RentalStartDate DATETIME NOT NULL, 
+RentalEndDate DATETIME NOT NULL,
+Rented BOOL NOT NULL, 
+PRIMARY KEY(CarID)  
+);
+
+CREATE TABLE CarReservations 
+(
+CarReservationID int NOT NULL AUTO_INCREMENT,
+CarID int NOT NULL,
+CustomerID int NOT NULL,
+PRIMARY KEY(CarReservationID),
+FOREIGN KEY(CarID) REFERENCES Cars(CarID),
+FOREIGN KEY(CustomerID) REFERENCES Customers(CustomerID)
+);
+
+CREATE TABLE Customers
+(
+CustomerID int NOT NULL AUTO_INCREMENT,
+Username VARCHAR (45) NOT NULL,
+Password VARCHAR (45) NOT NULL,
+FirstName VARCHAR(45) NOT NULL,
+LastName VARCHAR(45) NOT NULL,
+Email VARCHAR(100) NOT NULL,
+MailingAddress VARCHAR(100) NOT NULL,
+BillingAddress VARCHAR(100) NOT NULL,
+Phone VARCHAR(15) NOT NULL,
+PRIMARY KEY(CustomerID),
+FOREIGN KEY(CustomerID) REFERENCES CarReservations(CustomerID)
+);
+
+CREATE TABLE Flights
+(
+FlightID int NOT NULL AUTO_INCREMENT,
+Destination VARCHAR(3) NOT NULL,
+DepartureDate DATETIME NOT NULL,
+ReturnDate DATETIME NOT NULL,
+PRIMARY KEY (FlightID),
+FOREIGN KEY (FlightID) REFERENCES FlightReservations(FlightID)
+);
+
+CREATE TABLE FlightReservations
+(
+FlightReservationID int NOT NULL AUTO_INCREMENT,
+CustomerID int NOT NULL,
+FlightID int NOT NULL,
+PRIMARY KEY (FlightReservationID),
+FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
+FOREIGN KEY (FlightID) REFERENCES Flights(FlightID)
+);
+
+CREATE TABLE Hotels
+(
+HotelID int NOT NULL AUTO_INCREMENT,
+ArrivalDate DATETIME NOT NULL,
+DepartureDate DATETIME NOT NULL,
+PRIMARY KEY (HotelID),
+FOREIGN KEY (HotelID) REFERENCES HotelReservations(HotelID)
+);
+
+CREATE TABLE HotelReservations
+(
+HotelReservationID int NOT NULL AUTO_INCREMENT,
+CustomerID int NOT NULL,
+HotelID int NOT NULL,
+PRIMARY KEY (HotelReservationID),
+FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
+FOREIGN KEY (HotelID) REFERENCES Hotels(HotelID)
+); 

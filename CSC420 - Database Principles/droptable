@@ -1,0 +1,9 @@
+USE csc420_meglama
+
+DROP TABLE IF EXISTS Cars;
+DROP TABLE IF EXISTS CarReservations;
+DROP TABLE IF EXISTS Customers;
+DROP TABLE IF EXISTS Flights;
+DROP TABLE IF EXISTS FlightReservations;
+DROP TABLE IF EXISTS Hotels;
+DROP TABLE IF EXISTS HotelReservations;

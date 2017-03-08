@@ -1,0 +1,4 @@
+USE csc420_meglama
+
+SELECT CarID, RentalStartDate, RentalEndDate
+FROM Cars;

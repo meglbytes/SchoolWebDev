@@ -1,0 +1,4 @@
+USE csc420_meglama
+
+SELECT HotelID, ArrivalDate, DepartureDate
+FROM Hotels;
